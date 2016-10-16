@@ -1,0 +1,6 @@
+framework module Pods_SharkPit {
+  umbrella header "Pods-SharkPit-umbrella.h"
+
+  export *
+  module * { export * }
+}

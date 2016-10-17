@@ -29,12 +29,14 @@ class StoryCreateViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.descriptionTextView.delegate = self
-        self.descriptionTextView.text = "Enter Story here"
-        self.descriptionTextView.textColor = UIColor.lightGray
         self.titleTextField.becomeFirstResponder()
         self.storyImage.image = selectedImage
+        self.titleTextField.layer.cornerRadius = 6
+        self.storyImage.layer.cornerRadius = 6
+        self.descriptionTextView.layer.cornerRadius = 6 
     }
     
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.titleTextField.resignFirstResponder()
@@ -67,6 +69,7 @@ class StoryCreateViewController: UIViewController, UIImagePickerControllerDelega
             self.saveStoryWithImageIntoFirebase()
             
             self.dismiss(animated: true, completion: nil)
+            self.descriptionTextView.becomeFirstResponder()
         })
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {

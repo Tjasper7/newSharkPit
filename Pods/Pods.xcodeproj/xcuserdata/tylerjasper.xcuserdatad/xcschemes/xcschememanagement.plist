@@ -4,21 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Dollar.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>OAuthSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-SharkPit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,27 +22,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>555713F7637A770AF4C4489B1C4C932C</key>
+		<key>296FCEE4BB768E5E5964F44AD484821E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>5A9C0A1B54298D4C1FC2940FDB7371D8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>639129816FBC63B8C79798ADDE94EF60</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8AC5CA11A5E7C3170E85D458DE15ED94</key>
 		<dict>
 			<key>primary</key>
 			<true/>

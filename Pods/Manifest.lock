@@ -1,6 +1,4 @@
 PODS:
-  - Alamofire (4.0.1)
-  - Dollar (6.0.0)
   - Firebase (3.7.1):
     - Firebase/Core (= 3.7.1)
   - Firebase/Auth (3.7.1):
@@ -40,21 +38,15 @@ PODS:
   - GoogleSymbolUtilities (1.1.2)
   - GoogleUtilities (1.3.2):
     - GoogleSymbolUtilities (~> 1.1)
-  - OAuthSwift (1.0.0)
 
 DEPENDENCIES:
-  - Alamofire
-  - Dollar
   - Firebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
-  - OAuthSwift
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  Dollar: 6e69123e0901307d67a416dac70aeec56243a6e0
   Firebase: be473484f0d515e72ffd04acf22f981773c23e58
   FirebaseAnalytics: 0533a00b681e08fd0b2cd0444b7ddf0ef9fd7a1a
   FirebaseAuth: 75a062bbf2d3c97d1e6e55bbc110e13a6853e25d
@@ -66,8 +58,7 @@ SPEC CHECKSUMS:
   GoogleNetworkingUtilities: 3edd3a8161347494f2da60ea0deddc8a472d94cb
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
-  OAuthSwift: dd4f502ffd4f6e122b861b5e4529bf6454a30fe6
 
-PODFILE CHECKSUM: b1c062f957f300be83e21316855be87912cb414c
+PODFILE CHECKSUM: 53896cce520a94617c705d03454977418713266f
 
 COCOAPODS: 1.1.0.rc.1

@@ -24,7 +24,6 @@ extension UIViewController {
         titleLabel.textColor = UIColor.white
         navigationItem.titleView = titleLabel
     }
-    
 }
 
 extension UIView {

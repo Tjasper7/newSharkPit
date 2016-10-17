@@ -30,10 +30,13 @@ class CreateQuestionViewController : UIViewController, UIImagePickerControllerDe
             self.imageView.image = cameraRollPickedImage
         }
         self.titleTextField.delegate = self
+        self.titleTextField.layer.cornerRadius = 6
+        self.imageView.layer.cornerRadius = 6
+        self.descriptionTextView.layer.cornerRadius = 6 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-    
+        self.titleTextField.becomeFirstResponder()
     }
     
     // MARK: UITextfieldDelegate Methods
@@ -46,6 +49,7 @@ class CreateQuestionViewController : UIViewController, UIImagePickerControllerDe
     // MARK: Actions
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        self.view.endEditing(true)
         dismiss(animated: true, completion: nil)
     }
     
@@ -112,10 +116,12 @@ class CreateQuestionViewController : UIViewController, UIImagePickerControllerDe
     
     func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
         sender.view?.removeFromSuperview()
+        self.descriptionTextView.becomeFirstResponder()
         self.navigationController?.isNavigationBarHidden = false
     }
     
     func enlargeQuestionImage() {
+        self.titleTextField.resignFirstResponder()
         let newImageView = UIImageView(image: imageView.image)
         newImageView.frame = self.view.frame
         newImageView.contentMode = .scaleAspectFit

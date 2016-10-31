@@ -18,13 +18,6 @@ class PoolHallContainerViewController: UIViewController {
         setupView()
     }
     
-    lazy var poolHallListViewController: PoolHallListViewController = {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        var poolListViewController = storyboard.instantiateViewController(withIdentifier: "PoolHallListViewController") as! PoolHallListViewController
-        self.addViewControllerAsChildViewController(viewController: poolListViewController)
-        return poolListViewController
-    }()
-    
     lazy var poolHallMapViewController: PoolHallMapViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var poolMapViewController = storyboard.instantiateViewController(withIdentifier: "PoolHallMapViewController") as! PoolHallMapViewController
@@ -65,7 +58,6 @@ class PoolHallContainerViewController: UIViewController {
     }
     
     func updateView() {
-        poolHallListViewController.view.isHidden = !(segmentedControl.selectedSegmentIndex == 0)
         poolHallMapViewController.view.isHidden = (segmentedControl.selectedSegmentIndex == 0)
     }
     

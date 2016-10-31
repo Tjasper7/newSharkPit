@@ -94,7 +94,7 @@ class StoryCreateViewController: UIViewController, UIImagePickerControllerDelega
                 (metaData, error) in
                 
                 if error != nil {
-                    print(error)
+                    print("\(error)")
                     self.alertMessage(title: "Error creating story", message: "Try again")
                 }
                 if let imageUrl = metaData?.downloadURL()?.absoluteString {

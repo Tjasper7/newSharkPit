@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>BDBOAuth1Manager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SharkPit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>296FCEE4BB768E5E5964F44AD484821E</key>
+		<key>10D796284C04D0B2A8221B01B9437F13</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5A9C0A1B54298D4C1FC2940FDB7371D8</key>
+		<key>176B805EC6C9F45DA1062E075BE89B73</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E3892747C9FDF26FC00AE1321D2FA6C9</key>
+		<key>1ED8BE8BD6A53853974A60E1AC8B1019</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>28D0879F3CD31F51CF62894B0288A930</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7BE727D93261EAB78C6AF9EF46ED1BFB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

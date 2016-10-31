@@ -14,6 +14,7 @@ class PoolHallMapViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBOutlet var poolMapView: MKMapView!
     @IBOutlet var poolHallTableView: UITableView!
     
+    var businesses: [Business]!
     var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -28,6 +29,8 @@ class PoolHallMapViewController: UIViewController, CLLocationManagerDelegate, MK
         poolMapView.showsUserLocation = true
         poolMapView.userTrackingMode = MKUserTrackingMode.followWithHeading
         
+        searchForPoolhall(withLocation: "Thai")
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,7 +39,23 @@ class PoolHallMapViewController: UIViewController, CLLocationManagerDelegate, MK
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "businessCell", for: indexPath)
+        
         return cell
+    }
+    
+    func searchForPoolhall(withLocation: String) {
+        Business.searchWithTerm(term: withLocation, completion: { (businesses: [Business]?, error: Error?) -> Void in
+            
+            self.businesses = businesses
+            if let businesses = businesses {
+                for business in businesses {
+                    print(business.name!)
+                    print(business.address!)
+                }
+            }
+            
+        }
+        )
     }
     
 }

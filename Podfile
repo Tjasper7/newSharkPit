@@ -11,6 +11,8 @@ pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'Firebase/Auth'
+pod 'AFNetworking', '~> 2.5'
+pod 'BDBOAuth1Manager'
 
   target 'SharkPitTests' do
     inherit! :search_paths

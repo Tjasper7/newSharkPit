@@ -10,6 +10,8 @@
 		064760B073F8300BEEA2840D /* Pods_SharkPit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303887FD3B370CABF092175E /* Pods_SharkPit.framework */; };
 		22304CCE6ED7DA8FECAF180A /* Pods_SharkPitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BEAF39C24885CDBA72EB00F /* Pods_SharkPitTests.framework */; };
 		33881EFA65EF4019ED658E53 /* Pods_SharkPitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85000B2D6CACA8F3F2631D0F /* Pods_SharkPitUITests.framework */; };
+		6605E5711DC71079001636F8 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605E5701DC71079001636F8 /* YelpClient.swift */; };
+		6605E5731DC71087001636F8 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605E5721DC71087001636F8 /* Business.swift */; };
 		6617FA431D7CF6F70049DBFB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6617FA421D7CF6F70049DBFB /* GoogleService-Info.plist */; };
 		662DC5651D17CA0300F28C1E /* StoryCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662DC5641D17CA0300F28C1E /* StoryCreateViewController.swift */; };
 		664C70451D0C8CB50003C5DE /* ImageOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664C70441D0C8CB50003C5DE /* ImageOptionsViewController.swift */; };
@@ -44,14 +46,11 @@
 		66BD2FEC1D067B73008D5581 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BD2FEB1D067B73008D5581 /* MapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		66BD2FF01D068CEC008D5581 /* ProfileMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD2FEF1D068CEC008D5581 /* ProfileMasterViewController.swift */; };
 		66BD2FF61D069519008D5581 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD2FF51D069519008D5581 /* Profile.swift */; };
-		66CF6F461D3F3EEE0089C145 /* PoolHallListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CF6F451D3F3EEE0089C145 /* PoolHallListViewController.swift */; };
 		66CF6F4A1D3F51470089C145 /* PoolhallMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CF6F491D3F51470089C145 /* PoolhallMapViewController.swift */; };
 		66CF6F4C1D3F52D00089C145 /* BusinessListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CF6F4B1D3F52D00089C145 /* BusinessListingTableViewCell.swift */; };
 		66DDFB971D0F8A4100653AC2 /* QuestionMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DDFB961D0F8A4100653AC2 /* QuestionMasterViewController.swift */; };
 		66E055E21DB3FA320049ED35 /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E055E11DB3FA320049ED35 /* FirebaseModel.swift */; };
-		66F5526E1D7E5FFD006AA56C /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F5526D1D7E5FFD006AA56C /* UserLocation.swift */; };
 		66F552701D7E601B006AA56C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F5526F1D7E601B006AA56C /* CoreLocation.framework */; };
-		66F552721D7E71D5006AA56C /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F552711D7E71D5006AA56C /* YelpClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +88,8 @@
 		303887FD3B370CABF092175E /* Pods_SharkPit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharkPit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38853BDD345DB3DBB487501D /* Pods-SharkPitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharkPitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SharkPitTests/Pods-SharkPitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3BF137DFBB3830BC9A47808B /* Pods-SharkPit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharkPit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SharkPit/Pods-SharkPit.debug.xcconfig"; sourceTree = "<group>"; };
+		6605E5701DC71079001636F8 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
+		6605E5721DC71087001636F8 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		6617FA421D7CF6F70049DBFB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		662DC5641D17CA0300F28C1E /* StoryCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryCreateViewController.swift; sourceTree = "<group>"; };
 		663D06501D73FE6B005179F3 /* SharkPit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SharkPit.entitlements; sourceTree = "<group>"; };
@@ -130,14 +131,11 @@
 		66BD2FEB1D067B73008D5581 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		66BD2FEF1D068CEC008D5581 /* ProfileMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMasterViewController.swift; sourceTree = "<group>"; };
 		66BD2FF51D069519008D5581 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		66CF6F451D3F3EEE0089C145 /* PoolHallListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoolHallListViewController.swift; sourceTree = "<group>"; };
 		66CF6F491D3F51470089C145 /* PoolhallMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoolhallMapViewController.swift; sourceTree = "<group>"; };
 		66CF6F4B1D3F52D00089C145 /* BusinessListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessListingTableViewCell.swift; sourceTree = "<group>"; };
 		66DDFB961D0F8A4100653AC2 /* QuestionMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionMasterViewController.swift; sourceTree = "<group>"; };
 		66E055E11DB3FA320049ED35 /* FirebaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
-		66F5526D1D7E5FFD006AA56C /* UserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 		66F5526F1D7E601B006AA56C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		66F552711D7E71D5006AA56C /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		69A8CE52CAF631E16FDC41B4 /* Pods-SharkPitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharkPitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SharkPitUITests/Pods-SharkPitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7BEAF39C24885CDBA72EB00F /* Pods_SharkPitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharkPitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85000B2D6CACA8F3F2631D0F /* Pods_SharkPitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharkPitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -352,7 +350,6 @@
 			isa = PBXGroup;
 			children = (
 				6692F0451D6E8CE800B12A15 /* PoolHallContainerViewController.swift */,
-				66CF6F451D3F3EEE0089C145 /* PoolHallListViewController.swift */,
 				66CF6F4B1D3F52D00089C145 /* BusinessListingTableViewCell.swift */,
 				66CF6F491D3F51470089C145 /* PoolhallMapViewController.swift */,
 				66F5526C1D7E5F58006AA56C /* YelpStuff */,
@@ -372,8 +369,8 @@
 		66F5526C1D7E5F58006AA56C /* YelpStuff */ = {
 			isa = PBXGroup;
 			children = (
-				66F5526D1D7E5FFD006AA56C /* UserLocation.swift */,
-				66F552711D7E71D5006AA56C /* YelpClient.swift */,
+				6605E5721DC71087001636F8 /* Business.swift */,
+				6605E5701DC71079001636F8 /* YelpClient.swift */,
 			);
 			name = YelpStuff;
 			sourceTree = "<group>";
@@ -676,16 +673,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66F552721D7E71D5006AA56C /* YelpClient.swift in Sources */,
+				6605E5711DC71079001636F8 /* YelpClient.swift in Sources */,
 				66DDFB971D0F8A4100653AC2 /* QuestionMasterViewController.swift in Sources */,
-				66CF6F461D3F3EEE0089C145 /* PoolHallListViewController.swift in Sources */,
 				66BD2FF61D069519008D5581 /* Profile.swift in Sources */,
 				667F88C81D6D1D1B00F55A3C /* UIImage+Extension.swift in Sources */,
 				664CFA2B1D724B7C0093AE60 /* Story.swift in Sources */,
 				66BD2FEA1D067632008D5581 /* StoryDetailViewController.swift in Sources */,
 				66694AB11D037AB6003B8228 /* QuestionCell.swift in Sources */,
 				66BD2FF01D068CEC008D5581 /* ProfileMasterViewController.swift in Sources */,
-				66F5526E1D7E5FFD006AA56C /* UserLocation.swift in Sources */,
 				66E055E21DB3FA320049ED35 /* FirebaseModel.swift in Sources */,
 				66BD2FDA1D0653A0008D5581 /* StoriesMasterViewController.swift in Sources */,
 				664C70491D0C90E30003C5DE /* CreateQuestionViewController.swift in Sources */,
@@ -698,6 +693,7 @@
 				662DC5651D17CA0300F28C1E /* StoryCreateViewController.swift in Sources */,
 				669CDD791D9F440B008D7DD1 /* QuestionAddCommentViewController.swift in Sources */,
 				66694A811D0379D8003B8228 /* AppDelegate.swift in Sources */,
+				6605E5731DC71087001636F8 /* Business.swift in Sources */,
 				6692F0461D6E8CE800B12A15 /* PoolHallContainerViewController.swift in Sources */,
 				669CDD7D1DA18907008D7DD1 /* StoryCommentCell.swift in Sources */,
 				669DE8781D8614D200E6383A /* ImageCache.swift in Sources */,

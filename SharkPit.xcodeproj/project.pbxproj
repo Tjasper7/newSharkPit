@@ -24,6 +24,7 @@
 		664CFA2F1D7255860093AE60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664CFA2E1D7255860093AE60 /* LoginViewController.swift */; };
 		6657B8431DA767E40000B3BE /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6657B8421DA767E40000B3BE /* Comment.swift */; };
 		6659448A1D766B6E00AB50DF /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665944891D766B6E00AB50DF /* ViewController+Extension.swift */; };
+		665C214B1DC825E50065B7E2 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665C214A1DC825E50065B7E2 /* UserLocation.swift */; };
 		665E766A1D23956200F53DA3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665E76681D23956200F53DA3 /* FBSDKCoreKit.framework */; };
 		665E766B1D23956200F53DA3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665E76691D23956200F53DA3 /* FBSDKLoginKit.framework */; };
 		66694A811D0379D8003B8228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66694A801D0379D8003B8228 /* AppDelegate.swift */; };
@@ -103,6 +104,7 @@
 		664CFA2E1D7255860093AE60 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6657B8421DA767E40000B3BE /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		665944891D766B6E00AB50DF /* ViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
+		665C214A1DC825E50065B7E2 /* UserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 		665E76681D23956200F53DA3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		665E76691D23956200F53DA3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		66694A7D1D0379D8003B8228 /* SharkPit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharkPit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -352,6 +354,7 @@
 				6692F0451D6E8CE800B12A15 /* PoolHallContainerViewController.swift */,
 				66CF6F4B1D3F52D00089C145 /* BusinessListingTableViewCell.swift */,
 				66CF6F491D3F51470089C145 /* PoolhallMapViewController.swift */,
+				665C214A1DC825E50065B7E2 /* UserLocation.swift */,
 				66F5526C1D7E5F58006AA56C /* YelpStuff */,
 			);
 			name = PoolHalls;
@@ -678,6 +681,7 @@
 				66BD2FF61D069519008D5581 /* Profile.swift in Sources */,
 				667F88C81D6D1D1B00F55A3C /* UIImage+Extension.swift in Sources */,
 				664CFA2B1D724B7C0093AE60 /* Story.swift in Sources */,
+				665C214B1DC825E50065B7E2 /* UserLocation.swift in Sources */,
 				66BD2FEA1D067632008D5581 /* StoryDetailViewController.swift in Sources */,
 				66694AB11D037AB6003B8228 /* QuestionCell.swift in Sources */,
 				66BD2FF01D068CEC008D5581 /* ProfileMasterViewController.swift in Sources */,

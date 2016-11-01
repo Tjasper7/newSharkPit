@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class PoolHallMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource {
+class PoolHallMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var poolMapView: MKMapView!
     @IBOutlet var poolHallTableView: UITableView!
@@ -21,6 +21,8 @@ class PoolHallMapViewController: UIViewController, CLLocationManagerDelegate, MK
         super.viewDidLoad()
         setNavigationTitleToTheLeftWith(title: "PoolHalls")
         poolHallTableView.dataSource = self
+        poolHallTableView.delegate = self
+        locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -28,8 +30,6 @@ class PoolHallMapViewController: UIViewController, CLLocationManagerDelegate, MK
         
         poolMapView.showsUserLocation = true
         poolMapView.userTrackingMode = MKUserTrackingMode.followWithHeading
-        
-        searchForPoolhall(withLocation: "Thai")
         
     }
     
@@ -39,23 +39,24 @@ class PoolHallMapViewController: UIViewController, CLLocationManagerDelegate, MK
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "businessCell", for: indexPath)
-        
+        self.searchForPoolHallCellForRow(term: "Pool Hall", cell: cell)
         return cell
     }
     
-    func searchForPoolhall(withLocation: String) {
-        Business.searchWithTerm(term: withLocation, completion: { (businesses: [Business]?, error: Error?) -> Void in
+    func searchForPoolHallCellForRow(term: String, cell: UITableViewCell) {
+        Business.searchWithTerm(term: term, completion: { (businesses: [Business]?, error: Error?) -> Void in
             
             self.businesses = businesses
             if let businesses = businesses {
                 for business in businesses {
-                    print(business.name!)
-                    print(business.address!)
+                    cell.textLabel?.text = business.name
+                    cell.detailTextLabel?.text = business.distance
                 }
             }
             
         }
         )
+        
     }
     
 }

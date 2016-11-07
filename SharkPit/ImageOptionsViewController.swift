@@ -46,7 +46,14 @@ class ImageOptionsViewController : UIViewController, UIImagePickerControllerDele
     
     
     @IBAction func settingsButtonPressed(_ sender: AnyObject) {
-        print("Hello Tyler")
+       
+        let settingsUrl = URL(string: UIApplicationOpenSettingsURLString)
+        
+        if UIApplication.shared.canOpenURL(settingsUrl!) {
+            UIApplication.shared.open(settingsUrl!, completionHandler: { (success) in
+                print("Settings opened: \(success)")
+            })
+        }
     }
     
     @IBAction func takePictureButtonPressed(_ sender: UIButton) {
@@ -64,5 +71,6 @@ class ImageOptionsViewController : UIViewController, UIImagePickerControllerDele
         let navigationController = UINavigationController(rootViewController: createQuestionVC)
         createQuestionVC.cameraRollPickedImage = selectedImage
         present(navigationController, animated: true, completion: nil)
+        navigationController.navigationBar.isHidden = true  
     }
 }

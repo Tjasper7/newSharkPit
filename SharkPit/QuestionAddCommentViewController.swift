@@ -18,7 +18,7 @@ class QuestionAddCommentViewController: UIViewController, UITextViewDelegate {
     @IBOutlet var questionImageView: UIImageView!
     @IBOutlet var questionTitle: UILabel!
     @IBOutlet var addedByUser: UILabel!
-    
+    @IBOutlet weak var titleBackground: UIView!
     
     var currentQuestion: Question!
     var comment: Comment!
@@ -33,6 +33,8 @@ class QuestionAddCommentViewController: UIViewController, UITextViewDelegate {
         super.viewWillAppear(animated)
         questionTitle.text = currentQuestion.questionTitle
         addedByUser.text = currentQuestion.addedByUser
+        titleBackground.layer.cornerRadius = 6
+        commentBox.layer.cornerRadius = 6 
         if currentQuestion.questionImageUrl != nil {
             questionImageView.loadImageUsingCacheWithUrlString(urlString: currentQuestion.questionImageUrl)
         }

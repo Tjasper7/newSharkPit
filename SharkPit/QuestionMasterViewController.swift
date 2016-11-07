@@ -23,11 +23,10 @@ class QuestionMasterViewController: UIViewController, UICollectionViewDelegate, 
         self.questionCollectionView.delegate = self
         setNavigationTitleToTheLeftWith(title: "Questions")
         fetchQuestions()
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        self.questionCollectionView.reloadData()
     }
     
     func fetchQuestions () {

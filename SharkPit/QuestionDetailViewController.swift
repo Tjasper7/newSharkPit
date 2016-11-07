@@ -8,6 +8,7 @@
 
 import UIKit
 import Agrume
+import NVActivityIndicatorView
 
 class QuestionDetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
@@ -15,6 +16,8 @@ class QuestionDetailViewController : UIViewController, UITableViewDelegate, UITa
     @IBOutlet private var questionTitle : UILabel!
     @IBOutlet weak var questionDescription: UITextView!
     @IBOutlet var commentsTableView: UITableView!
+    @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
+    @IBOutlet weak var indicatorBackground: UIImageView!
     
     var question: Question!
     var comments = [Comment]()
@@ -32,8 +35,10 @@ class QuestionDetailViewController : UIViewController, UITableViewDelegate, UITa
         
         questionTitle.text = question.questionTitle
         questionDescription.text = question.theQuestion
+        activityIndicator.startAnimating()
         if question.questionImageUrl != nil {
             questionImageView.loadImageUsingCacheWithUrlString(urlString: question.questionImageUrl)
+            activityIndicator.stopAnimating()
         }
         commentsTableView.reloadData()
     }

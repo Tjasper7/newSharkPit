@@ -8,35 +8,40 @@
 
 import UIKit
 import Firebase
+import Agrume
 
 let questionRef = FIRDatabase.database().reference().child("questionItems")
 
-class CreateQuestionViewController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class CreateQuestionViewController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet weak var imageView : UIImageView!
     @IBOutlet weak var titleTextField : UITextField!
     @IBOutlet weak var descriptionTextView : UITextView!
     
     let currentUserEmail = FIRAuth.auth()?.currentUser?.email
-    
+    let defaultTitle = "Insert shot title"
+    let defaultShotDescription = "Enter description of shot and layout here."
     var newTableImage: UIImage?
     var cameraRollPickedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.descriptionTextView.delegate = self
+        self.titleTextField.delegate = self
+        
         if newTableImage != nil {
             self.imageView.image = newTableImage
         } else {
             self.imageView.image = cameraRollPickedImage
         }
-        self.titleTextField.delegate = self
+        
         self.titleTextField.layer.cornerRadius = 6
         self.imageView.layer.cornerRadius = 6
         self.descriptionTextView.layer.cornerRadius = 6 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.titleTextField.becomeFirstResponder()
+        
     }
     
     // MARK: UITextfieldDelegate Methods
@@ -44,6 +49,18 @@ class CreateQuestionViewController : UIViewController, UIImagePickerControllerDe
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if titleTextField.text == defaultTitle {
+            titleTextField.text = ""
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if descriptionTextView.text == defaultShotDescription {
+            descriptionTextView.text = ""
+        }
     }
     
     // MARK: Actions
@@ -66,10 +83,21 @@ class CreateQuestionViewController : UIViewController, UIImagePickerControllerDe
             
             self.saveQuestionWithImageIntoFirebase()
             
-            //TODO:  start loading indicator
-            self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-            //TODO: end loading indicator
+            if self.titleTextField.isFirstResponder {
+                self.titleTextField.resignFirstResponder()
+            }
+            if self.descriptionTextView.isFirstResponder {
+                self.descriptionTextView.resignFirstResponder()
+            }
+            let presentingViewController = self.presentingViewController
+            let createController = CreateQuestionViewController()
             
+            self.dismiss(animated: false, completion: {
+                presentingViewController!.dismiss(animated: true, completion: {})
+            })
+            self.dismiss(animated: false, completion: {
+                createController.dismiss(animated: true, completion: {})
+            })
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
@@ -93,8 +121,8 @@ class CreateQuestionViewController : UIViewController, UIImagePickerControllerDe
                 (metaData, error) in
                 
                 if error != nil {
-                    print(error)
-                    self.alertMessage(title: "Error creating story", message: "Try again")
+                    print(error!)
+                    self.alertMessage(title: "Error creating question", message: "Try again")
                     return 
                 }
                 if let imageUrl = metaData?.downloadURL()?.absoluteString {
@@ -121,15 +149,7 @@ class CreateQuestionViewController : UIViewController, UIImagePickerControllerDe
     }
     
     func enlargeQuestionImage() {
-        self.titleTextField.resignFirstResponder()
-        let newImageView = UIImageView(image: imageView.image)
-        newImageView.frame = self.view.frame
-        newImageView.contentMode = .scaleAspectFit
-        newImageView.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(CreateQuestionViewController.dismissFullscreenImage(_:)))
-        newImageView.addGestureRecognizer(tap)
-        descriptionTextView.resignFirstResponder()
-        self.view.addSubview(newImageView)
-        self.navigationController?.isNavigationBarHidden = true
+        let agrumeImage = Agrume(image: imageView.image!)
+        agrumeImage.showFrom(self)
     }
 }

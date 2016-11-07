@@ -35,6 +35,7 @@
 		66694AB11D037AB6003B8228 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66694AB01D037AB6003B8228 /* QuestionCell.swift */; };
 		667F88C81D6D1D1B00F55A3C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F88C71D6D1D1B00F55A3C /* UIImage+Extension.swift */; };
 		668D0D3E1D7387440095F80B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668D0D3D1D7387440095F80B /* Question.swift */; };
+		668D2BB61DD09EFA00BDE964 /* StoryAddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668D2BB51DD09EFA00BDE964 /* StoryAddCommentViewController.swift */; };
 		6692F0461D6E8CE800B12A15 /* PoolHallContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692F0451D6E8CE800B12A15 /* PoolHallContainerViewController.swift */; };
 		669CDD771D9F3C2E008D7DD1 /* QuestionCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CDD761D9F3C2E008D7DD1 /* QuestionCommentCell.swift */; };
 		669CDD791D9F440B008D7DD1 /* QuestionAddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CDD781D9F440B008D7DD1 /* QuestionAddCommentViewController.swift */; };
@@ -121,6 +122,7 @@
 		66694AB01D037AB6003B8228 /* QuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		667F88C71D6D1D1B00F55A3C /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		668D0D3D1D7387440095F80B /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		668D2BB51DD09EFA00BDE964 /* StoryAddCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryAddCommentViewController.swift; sourceTree = "<group>"; };
 		6692F0451D6E8CE800B12A15 /* PoolHallContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoolHallContainerViewController.swift; sourceTree = "<group>"; };
 		669CDD761D9F3C2E008D7DD1 /* QuestionCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCommentCell.swift; sourceTree = "<group>"; };
 		669CDD781D9F440B008D7DD1 /* QuestionAddCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAddCommentViewController.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				66BD2FD91D0653A0008D5581 /* StoriesMasterViewController.swift */,
 				662DC5641D17CA0300F28C1E /* StoryCreateViewController.swift */,
 				66BD2FE91D067632008D5581 /* StoryDetailViewController.swift */,
+				668D2BB51DD09EFA00BDE964 /* StoryAddCommentViewController.swift */,
 			);
 			name = Stories;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				664C70491D0C90E30003C5DE /* CreateQuestionViewController.swift in Sources */,
 				669CDD771D9F3C2E008D7DD1 /* QuestionCommentCell.swift in Sources */,
 				66BD2FE21D065F41008D5581 /* StoryCell.swift in Sources */,
+				668D2BB61DD09EFA00BDE964 /* StoryAddCommentViewController.swift in Sources */,
 				664C70451D0C8CB50003C5DE /* ImageOptionsViewController.swift in Sources */,
 				668D0D3E1D7387440095F80B /* Question.swift in Sources */,
 				66CF6F4A1D3F51470089C145 /* PoolhallMapViewController.swift in Sources */,
@@ -861,7 +865,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3BF137DFBB3830BC9A47808B /* Pods-SharkPit.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SharkPit/SharkPit.entitlements;
@@ -880,6 +884,7 @@
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jasper.SharkPit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -887,7 +892,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Debug;
 		};
@@ -895,7 +900,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C87516B0DCBA53EFD97CB20 /* Pods-SharkPit.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SharkPit/SharkPit.entitlements;
@@ -914,6 +919,7 @@
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jasper.SharkPit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -921,7 +927,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Release;
 		};

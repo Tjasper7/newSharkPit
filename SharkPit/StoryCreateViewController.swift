@@ -16,8 +16,6 @@ class StoryCreateViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet var storyImage: UIImageView!
     
-    let alert = FCAlertView()
-    
     var selectedImage: UIImage?
     let imageCacheStore = ImageCacheStore()
     
@@ -38,11 +36,13 @@ class StoryCreateViewController: UIViewController, UIImagePickerControllerDelega
         self.titleTextField.delegate = self
         self.titleTextField.layer.cornerRadius = 6
         
-        self.storyImage.image = selectedImage
         self.storyImage.layer.cornerRadius = 6
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.titleTextField.becomeFirstResponder()
+    }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -50,6 +50,14 @@ class StoryCreateViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func buttonCancelClicked(_ sender: AnyObject) {
+        if descriptionTextView.isFirstResponder {
+            self.descriptionTextView.resignFirstResponder()
+        }
+        
+        if titleTextField.isFirstResponder {
+            self.titleTextField.resignFirstResponder()
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -136,10 +144,7 @@ class StoryCreateViewController: UIViewController, UIImagePickerControllerDelega
         if descriptionTextView.text == "" {
             descriptionTextView.text = descriptionDefaultText
         }
-        if descriptionTextView.text.characters.count <= 159 {
-            alertMessage(title: "Error", message: "Character count must be atleast 160")
             descriptionTextView.text = textView.text
-        }
     }
     
     

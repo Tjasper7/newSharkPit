@@ -24,7 +24,6 @@ PODS:
   - BDBOAuth1Manager (1.6.0):
     - AFNetworking/NSURLConnection (~> 2.6.0)
     - AFNetworking/NSURLSession (~> 2.6.0)
-  - FCAlertView (1.2.4)
   - Firebase (3.9.0):
     - Firebase/Core (= 3.9.0)
   - Firebase/Auth (3.9.0):
@@ -72,32 +71,37 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
   - GTMSessionFetcher/Core (1.1.7)
+  - NVActivityIndicatorView (3.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
   - Agrume (from `https://github.com/JanGorman/Agrume.git`)
   - BDBOAuth1Manager
-  - FCAlertView
   - Firebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - NVActivityIndicatorView (from `https://github.com/ninjaprox/NVActivityIndicatorView.git`)
 
 EXTERNAL SOURCES:
   Agrume:
     :git: https://github.com/JanGorman/Agrume.git
+  NVActivityIndicatorView:
+    :git: https://github.com/ninjaprox/NVActivityIndicatorView.git
 
 CHECKOUT OPTIONS:
   Agrume:
     :commit: 62f11a3f42f85b073b8c055c7246a464628e60aa
     :git: https://github.com/JanGorman/Agrume.git
+  NVActivityIndicatorView:
+    :commit: 4d36ec2e0d9dc5bd21b781666f101c673de47d7b
+    :git: https://github.com/ninjaprox/NVActivityIndicatorView.git
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Agrume: b96babc1dc0a12cc799268e15cdc4571b0e6e1d3
   BDBOAuth1Manager: cd5a5872f355ca38180d52ca2dd844f0b0c84797
-  FCAlertView: f4b9761b39a91383d500230c3ce7ae09bbac25b6
   Firebase: ff77ffb77b317c3720fef57a60e9335cebf962e6
   FirebaseAnalytics: 6e58fc9b397664369ac7617fb0ba93fab6ba7b5b
   FirebaseAuth: 96e9674ff31d6e1f826d53e26aa003a57cab0295
@@ -109,7 +113,8 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  NVActivityIndicatorView: 19c0c7549ffe4f830f65d00b2f0d9a144e4c5105
 
-PODFILE CHECKSUM: aeacd86faf86edbcc362acf7750ca5a54a0ef02a
+PODFILE CHECKSUM: e30f3fb41aca25a68e7caef495b610051b44b6b8
 
 COCOAPODS: 1.1.1

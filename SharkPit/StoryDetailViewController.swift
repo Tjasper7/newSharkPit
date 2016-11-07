@@ -8,13 +8,14 @@
 
 import UIKit
 import Agrume
+import NVActivityIndicatorView
 
-class StoryDetailViewController: UIViewController, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate{
+class StoryDetailViewController: UIViewController, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var storyDetailTitle: UILabel!
     @IBOutlet var storyDetailTheStory: UITextView!
     @IBOutlet var storyDetailImage: UIImageView!
-    
+    @IBOutlet var activityIndicator: NVActivityIndicatorView!
     @IBOutlet var storyCommentTableView: UITableView!
     
     var story: Story!
@@ -42,9 +43,15 @@ class StoryDetailViewController: UIViewController, UIGestureRecognizerDelegate, 
     override func viewWillAppear(_ animated: Bool) {
         storyDetailTitle.text = story.storyTitle
         storyDetailTheStory.text = story.theStory
+        activityIndicator.startAnimating()
         if story.storyImageURL != nil {
             storyDetailImage.loadImageUsingCacheWithUrlString(urlString: story.storyImageURL)
+            activityIndicator.stopAnimating()
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        <#code#>
     }
     
     // MARK: Comment TableView 

@@ -34,7 +34,7 @@ class StoriesMasterViewController: UIViewController, UIImagePickerControllerDele
 //            }
 //        })
 //    }
-    
+
     func fetchStories() {
         FIRDatabase.database().reference().child("storyItems").observe(.childAdded, with: { (snapshot) in
             

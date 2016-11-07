@@ -23,6 +23,7 @@ class QuestionMasterViewController: UIViewController, UICollectionViewDelegate, 
         self.questionCollectionView.delegate = self
         setNavigationTitleToTheLeftWith(title: "Questions")
         fetchQuestions()
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +44,6 @@ class QuestionMasterViewController: UIViewController, UICollectionViewDelegate, 
             
             }, withCancel: nil)
     }
-
     
     //MARK: Actions
     
@@ -74,7 +74,6 @@ class QuestionMasterViewController: UIViewController, UICollectionViewDelegate, 
         let question = questions[indexPath.row]
         cell.questionTitleLabel.text = question.questionTitle
         cell.questionUserAddedBy.text = question.addedByUser
-        
         if question.questionImageUrl != nil {
             FIRStorage.storage().reference(forURL: question.questionImageUrl).data(withMaxSize: 10 * 1024 * 1024, completion: {
                 (data, error) in
@@ -87,5 +86,4 @@ class QuestionMasterViewController: UIViewController, UICollectionViewDelegate, 
         
         return cell
     }
-    
 }

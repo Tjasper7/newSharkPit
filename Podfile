@@ -13,6 +13,7 @@ pod 'Firebase/Storage'
 pod 'Firebase/Auth'
 pod 'AFNetworking', '~> 2.5'
 pod 'BDBOAuth1Manager'
+pod 'Agrume', :git => 'https://github.com/JanGorman/Agrume.git'
 
   target 'SharkPitTests' do
     inherit! :search_paths

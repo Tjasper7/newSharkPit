@@ -9,7 +9,32 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Agrume.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>BDBOAuth1Manager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FCAlertView-FCAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FCAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,7 +57,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>10D796284C04D0B2A8221B01B9437F13</key>
+		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1613271357771814C71601D90B787D94</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +82,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>709B37C87082FC138C02EA729A3F8D0C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7BE727D93261EAB78C6AF9EF46ED1BFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF1ABE20DAA23760FBF0359740C1F0B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F64BB9410BBA3427E1F7A722870C365B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

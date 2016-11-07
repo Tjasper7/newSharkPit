@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Agrume
 
 class QuestionDetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
@@ -17,7 +18,7 @@ class QuestionDetailViewController : UIViewController, UITableViewDelegate, UITa
     
     var question: Question!
     var comments = [Comment]()
-    
+    var agrume: Agrume!
     override func viewDidLoad() {
         super.viewDidLoad()
         commentsTableView.delegate = self
@@ -79,15 +80,8 @@ class QuestionDetailViewController : UIViewController, UITableViewDelegate, UITa
     }
     
     @IBAction func tappedQuestionImage(_ sender: UITapGestureRecognizer) {
-        let imageView = sender.view as! UIImageView
-        let newImageView = UIImageView(image: imageView.image)
-        newImageView.frame = (self.view.window?.frame)!
-        newImageView.backgroundColor = UIColor.black
-        newImageView.contentMode = .scaleAspectFill
-        newImageView.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(QuestionDetailViewController.dismissFullscreenImage(sender:)))
-        newImageView.addGestureRecognizer(tap)
-        self.view.addSubview(newImageView)
+        let agrumeImage = Agrume(image: questionImageView.image!)
+        agrumeImage.showFrom(self)
     }
 }
 

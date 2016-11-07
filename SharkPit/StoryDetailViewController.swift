@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Agrume
 
 class StoryDetailViewController: UIViewController, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate{
     
@@ -15,8 +16,10 @@ class StoryDetailViewController: UIViewController, UIGestureRecognizerDelegate, 
     @IBOutlet var storyDetailImage: UIImageView!
     
     @IBOutlet var storyCommentTableView: UITableView!
+    
     var story: Story!
     var tapStory: UITapGestureRecognizer = UITapGestureRecognizer()
+    var agrume: Agrume!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,19 +63,7 @@ class StoryDetailViewController: UIViewController, UIGestureRecognizerDelegate, 
     //MARK: Tapped Image 
     
     @IBAction func tappedStoryImage(_ sender: UITapGestureRecognizer) {
-        let newImageView = UIImageView(image: storyDetailImage.image)
-        newImageView.frame = (self.view.window?.bounds)!
-        newImageView.backgroundColor = UIColor.black
-        newImageView.contentMode = .scaleToFill
-        newImageView.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(StoryDetailViewController.dismissFullScreenImage(_:)))
-        newImageView.addGestureRecognizer(tap)
-        self.view.addSubview(newImageView)
+        let agrumeImage = Agrume(image: storyDetailImage.image!)
+        agrumeImage.showFrom(self)
     }
-    
-    func dismissFullScreenImage(_ sender: UITapGestureRecognizer) {
-        self.view.removeFromSuperview()
-    }
-    
-    
 }

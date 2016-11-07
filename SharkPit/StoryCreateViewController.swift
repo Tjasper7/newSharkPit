@@ -9,15 +9,20 @@
 import UIKit
 import Firebase
 
-class StoryCreateViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
+class StoryCreateViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate {
     
     // MARK: Outlets
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet var storyImage: UIImageView!
     
+    let alert = FCAlertView()
+    
     var selectedImage: UIImage?
     let imageCacheStore = ImageCacheStore()
+    
+    let descriptionDefaultText = "Enter story here. 160 characters required"
+    let defaultTitle = "Insert Title"
     
     var stories = [Story]()
     var story: Story!
@@ -29,11 +34,13 @@ class StoryCreateViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.descriptionTextView.delegate = self
-        self.titleTextField.becomeFirstResponder()
-        self.storyImage.image = selectedImage
+        self.descriptionTextView.layer.cornerRadius = 6
+        self.titleTextField.delegate = self
         self.titleTextField.layer.cornerRadius = 6
+        
+        self.storyImage.image = selectedImage
         self.storyImage.layer.cornerRadius = 6
-        self.descriptionTextView.layer.cornerRadius = 6 
+        
     }
     
 
@@ -49,16 +56,21 @@ class StoryCreateViewController: UIViewController, UIImagePickerControllerDelega
     // MARK: Save Stuff 
     
     @IBAction func buttonSaveStoryClicked(_ sender: AnyObject) {
+        
         if self.titleTextField.text == "" {
-            alertMessage(title: "Alert", message: "Story must have a title")
+            alertMessage(title: "Opps", message: "Story must have a title")
         }
         
         if self.descriptionTextView.text == "" {
-            alertMessage(title: "Alert", message: "Story can not be empty")
+            alertMessage(title: "Opps", message: "Story can not be empty")
+        }
+        
+        if self.descriptionTextView.text.characters.count <= 159 {
+            alertMessage(title: "Opps", message: "Story must be 160 characters")
         }
         
         if self.storyImage.image == nil {
-            alertMessage(title: "Alert", message: "Story must have an image")
+            alertMessage(title: "Opps", message: "Story must have an image")
         }
         
         let alert = UIAlertController(title: "Post a story", message: "This will save and post your story", preferredStyle: .alert)
@@ -110,14 +122,41 @@ class StoryCreateViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     
-    //MARK: Story textview
+    //MARK: Story text box
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if descriptionTextView.textColor == UIColor.lightGray {
-            descriptionTextView.text = nil
+        if descriptionTextView.text == descriptionDefaultText {
+            descriptionTextView.text = ""
             textView.textColor = UIColor.black
         }
     }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        
+        if descriptionTextView.text == "" {
+            descriptionTextView.text = descriptionDefaultText
+        }
+        if descriptionTextView.text.characters.count <= 159 {
+            alertMessage(title: "Error", message: "Character count must be atleast 160")
+            descriptionTextView.text = textView.text
+        }
+    }
+    
+    
+    // MARK: Story Title field
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if titleTextField.text == defaultTitle {
+            titleTextField.text = ""
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if titleTextField.text == "" {
+            titleTextField.text = defaultTitle
+        }
+    }
+    
     
     // MARK: Image Stuff 
     
@@ -131,6 +170,7 @@ class StoryCreateViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+        self.descriptionTextView.becomeFirstResponder()
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -138,5 +178,6 @@ class StoryCreateViewController: UIViewController, UIImagePickerControllerDelega
         imageCacheStore.setImage(image: selectedImage, forKey: "storyImage")
         storyImage.image = selectedImage
         dismiss(animated: true, completion: nil)
+        self.descriptionTextView.becomeFirstResponder()
     }
 }

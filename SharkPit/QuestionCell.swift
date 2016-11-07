@@ -13,5 +13,10 @@ class QuestionCell: UICollectionViewCell {
     @IBOutlet weak var questionImageView: UIImageView!
     @IBOutlet weak var questionTitleLabel: UILabel!
     @IBOutlet weak var questionProfileImage: UIImageView!
-    @IBOutlet weak var questionUserAddedBy: UILabel! 
+    @IBOutlet weak var questionUserAddedBy: UILabel!
+    
+    override func layoutSubviews() {
+        self.questionImageView.layer.masksToBounds = true
+        self.questionImageView.layer.cornerRadius = 8
+    }
 }

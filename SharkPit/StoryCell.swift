@@ -15,4 +15,9 @@ class StoryCell: UICollectionViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var storyImageIndicator: UIActivityIndicatorView!
+    
+    override func layoutSubviews() {
+        self.storyImageView.layer.masksToBounds = true
+        self.storyImageView.layer.cornerRadius = 8 
+    }
 }

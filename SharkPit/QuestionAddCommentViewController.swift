@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 import UIKit
 
-class QuestionAddCommentViewController: UIViewController {
+class QuestionAddCommentViewController: UIViewController, UITextViewDelegate {
     
     // MARK: Outlets
 
@@ -26,7 +26,7 @@ class QuestionAddCommentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        commentBox.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +55,22 @@ class QuestionAddCommentViewController: UIViewController {
             currentQuestion.addComment(comment: newComment!)
             self.dismiss(animated: true, completion: nil)
         } else {
+            
             alertMessage(title: "Alert", message: "Comment box can not be empty")
+        }
+    }
+    
+    // MARK: Textview Delegate 
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        commentBox.text = ""
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if commentBox.text == "" {
+            commentBox.text = "Enter story here. 160 characters required"
+        }
+        if commentBox.text.characters.count <= 159 {
+            alertMessage(title: "Error", message: "Character count must be atleast 160")
         }
     }
 }

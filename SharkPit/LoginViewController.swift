@@ -83,7 +83,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             
             if error != nil {
                 self.alertMessage(title: "Sign up error", message: "Sorry we had a issue creating your account. Please try again shark")
-                print(error)
+                print(error!)
             }
             
             // Successfully authenticated user

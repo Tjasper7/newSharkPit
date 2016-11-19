@@ -37,6 +37,8 @@
 		668D0D3E1D7387440095F80B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668D0D3D1D7387440095F80B /* Question.swift */; };
 		668D2BB61DD09EFA00BDE964 /* StoryAddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668D2BB51DD09EFA00BDE964 /* StoryAddCommentViewController.swift */; };
 		6692F0461D6E8CE800B12A15 /* PoolHallContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692F0451D6E8CE800B12A15 /* PoolHallContainerViewController.swift */; };
+		66958C7B1DDFE09700ED46DB /* PoolBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66958C7A1DDFE09700ED46DB /* PoolBallView.swift */; };
+		66958C7D1DDFE61C00ED46DB /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66958C7C1DDFE61C00ED46DB /* LineView.swift */; };
 		669CDD771D9F3C2E008D7DD1 /* QuestionCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CDD761D9F3C2E008D7DD1 /* QuestionCommentCell.swift */; };
 		669CDD791D9F440B008D7DD1 /* QuestionAddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CDD781D9F440B008D7DD1 /* QuestionAddCommentViewController.swift */; };
 		669CDD7D1DA18907008D7DD1 /* StoryCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CDD7C1DA18907008D7DD1 /* StoryCommentCell.swift */; };
@@ -124,6 +126,8 @@
 		668D0D3D1D7387440095F80B /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		668D2BB51DD09EFA00BDE964 /* StoryAddCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryAddCommentViewController.swift; sourceTree = "<group>"; };
 		6692F0451D6E8CE800B12A15 /* PoolHallContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoolHallContainerViewController.swift; sourceTree = "<group>"; };
+		66958C7A1DDFE09700ED46DB /* PoolBallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoolBallView.swift; sourceTree = "<group>"; };
+		66958C7C1DDFE61C00ED46DB /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		669CDD761D9F3C2E008D7DD1 /* QuestionCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCommentCell.swift; sourceTree = "<group>"; };
 		669CDD781D9F440B008D7DD1 /* QuestionAddCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAddCommentViewController.swift; sourceTree = "<group>"; };
 		669CDD7C1DA18907008D7DD1 /* StoryCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryCommentCell.swift; sourceTree = "<group>"; };
@@ -299,6 +303,8 @@
 				664CFA2A1D724B7C0093AE60 /* Story.swift */,
 				66BD2FF51D069519008D5581 /* Profile.swift */,
 				6657B8421DA767E40000B3BE /* Comment.swift */,
+				66958C7A1DDFE09700ED46DB /* PoolBallView.swift */,
+				66958C7C1DDFE61C00ED46DB /* LineView.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -691,6 +697,7 @@
 				66E055E21DB3FA320049ED35 /* FirebaseModel.swift in Sources */,
 				66BD2FDA1D0653A0008D5581 /* StoriesMasterViewController.swift in Sources */,
 				664C70491D0C90E30003C5DE /* CreateQuestionViewController.swift in Sources */,
+				66958C7D1DDFE61C00ED46DB /* LineView.swift in Sources */,
 				669CDD771D9F3C2E008D7DD1 /* QuestionCommentCell.swift in Sources */,
 				66BD2FE21D065F41008D5581 /* StoryCell.swift in Sources */,
 				668D2BB61DD09EFA00BDE964 /* StoryAddCommentViewController.swift in Sources */,
@@ -700,6 +707,7 @@
 				6659448A1D766B6E00AB50DF /* ViewController+Extension.swift in Sources */,
 				662DC5651D17CA0300F28C1E /* StoryCreateViewController.swift in Sources */,
 				669CDD791D9F440B008D7DD1 /* QuestionAddCommentViewController.swift in Sources */,
+				66958C7B1DDFE09700ED46DB /* PoolBallView.swift in Sources */,
 				66694A811D0379D8003B8228 /* AppDelegate.swift in Sources */,
 				6605E5731DC71087001636F8 /* Business.swift in Sources */,
 				6692F0461D6E8CE800B12A15 /* PoolHallContainerViewController.swift in Sources */,

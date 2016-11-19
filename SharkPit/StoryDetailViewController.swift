@@ -50,10 +50,6 @@ class StoryDetailViewController: UIViewController, UIGestureRecognizerDelegate, 
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
-    }
-    
     // MARK: Comment TableView 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

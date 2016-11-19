@@ -101,7 +101,7 @@ class ProfileMasterViewController: UIViewController, UIImagePickerControllerDele
             
             storageRef.put(uploadData, metadata: nil, completion: { (metaData, error) in
                 if error != nil {
-                    print(error)
+                    print(error!)
                 }
                 let currentUser = FIRAuth.auth()?.currentUser
                 guard let currentUserEmail = currentUser?.email else { return }

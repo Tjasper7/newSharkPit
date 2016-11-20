@@ -23,7 +23,7 @@ class ImageOptionsViewController : UIViewController, UIImagePickerControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.settingsButton.layer.cornerRadius = 10
+        self.settingsButton.layer.cornerRadius = buttonCornerRadius
         self.imagePicker.delegate = self
         self.takePictureButton.layer.cornerRadius = buttonCornerRadius
         self.createTableButton.layer.cornerRadius = buttonCornerRadius

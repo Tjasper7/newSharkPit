@@ -11,9 +11,8 @@ import UIKit
 public extension UIWindow {
     
     func captureScreenShot() -> UIImage {
-        
-        UIGraphicsBeginImageContextWithOptions(self.frame.size, self.isOpaque, UIScreen.main.scale)
-        
+        let size = CGSize(width: self.frame.size.width - 30, height: self.frame.size.height)
+        UIGraphicsBeginImageContextWithOptions(size, self.isOpaque, UIScreen.main.scale)
         self.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

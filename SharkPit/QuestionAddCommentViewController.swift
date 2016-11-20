@@ -27,14 +27,14 @@ class QuestionAddCommentViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         commentBox.delegate = self
+        titleBackground.layer.cornerRadius = 6
+        commentBox.layer.cornerRadius = 6
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         questionTitle.text = currentQuestion.questionTitle
         addedByUser.text = currentQuestion.addedByUser
-        titleBackground.layer.cornerRadius = 6
-        commentBox.layer.cornerRadius = 6 
         if currentQuestion.questionImageUrl != nil {
             questionImageView.loadImageUsingCacheWithUrlString(urlString: currentQuestion.questionImageUrl)
         }

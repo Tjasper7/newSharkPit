@@ -10,7 +10,7 @@ import UIKit
 import Agrume
 import NVActivityIndicatorView
 
-class StoryDetailViewController: UIViewController, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate {
+class StoryDetailViewController: UIViewController, UIGestureRecognizerDelegate  {
     
     @IBOutlet var storyDetailTitle: UILabel!
     @IBOutlet var storyDetailTheStory: UITextView!
@@ -24,8 +24,6 @@ class StoryDetailViewController: UIViewController, UIGestureRecognizerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        storyCommentTableView.delegate = self
-        storyCommentTableView.dataSource = self
         self.navigationController?.navigationBar.tintColor = UIColor.white
         tapStory = UITapGestureRecognizer(target: self, action: #selector(StoryDetailViewController.tapStoryView))
         tapStory.delegate = self
@@ -43,27 +41,20 @@ class StoryDetailViewController: UIViewController, UIGestureRecognizerDelegate, 
     override func viewWillAppear(_ animated: Bool) {
         storyDetailTitle.text = story.storyTitle
         storyDetailTheStory.text = story.theStory
-        activityIndicator.startAnimating()
         if story.storyImageURL != nil {
             storyDetailImage.loadImageUsingCacheWithUrlString(urlString: story.storyImageURL)
-            activityIndicator.stopAnimating()
         }
     }
     
-    // MARK: Comment TableView 
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCommentTable" {
+            let story = self.story
+            let destinationViewController = segue.destination as! StoryCommnetTableViewController
+            destinationViewController.story = story
+        }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StoryCommentCell") as! StoryCommentCell
-        cell.userName.text = "User Name"
-        cell.storyComment.text = "Story Comment here"
-        return cell
-    }
-    
-    //MARK: Tapped Image 
+    //MARK: Tapped Image
     
     @IBAction func tappedStoryImage(_ sender: UITapGestureRecognizer) {
         let agrumeImage = Agrume(image: storyDetailImage.image!)

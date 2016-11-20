@@ -10,29 +10,26 @@ import UIKit
 import Agrume
 import NVActivityIndicatorView
 
-class QuestionDetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class QuestionDetailViewController : UIViewController  {
     
     @IBOutlet private var questionImageView : UIImageView!
     @IBOutlet private var questionTitle : UILabel!
     @IBOutlet weak var questionDescription: UITextView!
-    @IBOutlet var commentsTableView: UITableView!
     @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
     @IBOutlet weak var indicatorBackground: UIImageView!
     
     var question: Question!
     var comments = [Comment]()
     var agrume: Agrume!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        commentsTableView.delegate = self
-        commentsTableView.dataSource = self
+        
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        
         questionTitle.text = question.questionTitle
         questionDescription.text = question.theQuestion
         activityIndicator.startAnimating()
@@ -40,37 +37,13 @@ class QuestionDetailViewController : UIViewController, UITableViewDelegate, UITa
             questionImageView.loadImageUsingCacheWithUrlString(urlString: question.questionImageUrl)
             activityIndicator.stopAnimating()
         }
-        commentsTableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addCommentView" {
-            let destinationVC = segue.destination as! QuestionAddCommentViewController
+        if segue.identifier == "QuestionCommentViewController" {
+            let destinationVC = segue.destination as! QuestionCommentTableViewController
             destinationVC.currentQuestion = question
         }
-    }
-    
-    
-    // MARK: Comment TableView Data Source
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return comments.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCommentCell") as! QuestionCommentCell
-        let comment = comments[indexPath.row]
-        cell.userName.text = comment.userName
-        cell.commentDescription.text = comment.comment
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return
     }
     
     

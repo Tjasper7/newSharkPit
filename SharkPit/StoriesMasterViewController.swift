@@ -22,6 +22,7 @@ class StoriesMasterViewController: UIViewController, UIImagePickerControllerDele
         self.storyCollectionView.dataSource = self
         self.storyCollectionView.delegate = self
         setNavigationTitleToTheLeftWith(title: "Stories")
+        
         fetchStories()
     }
     
@@ -40,7 +41,6 @@ class StoriesMasterViewController: UIViewController, UIImagePickerControllerDele
             
             if (snapshot.value as? [String : AnyObject]) != nil {
                 let story = Story(snapshot: snapshot)
-                
                 //if you use this setter, your app will crash if your class properties don't exactly match up with the firebase dictionary key
                 self.stories.append(story)
                 print("Fetching Stories on master")

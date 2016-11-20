@@ -14,14 +14,31 @@ class StoryAddCommentViewController: UIViewController {
     @IBOutlet var storyImageView: UIImageView!
     @IBOutlet var storyTitle: UILabel!
     @IBOutlet var storyAddedByUser: UILabel!
+    @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var topBackgroundView: UIView!
     
-    var currentStory: Story!
-    let currentUserEmail = FIRAuth.auth()?.currentUser?.email
+    var story: Story!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        commentTextView.layer.cornerRadius = 4
+        topBackgroundView.layer.cornerRadius = 4
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        commentTextView.becomeFirstResponder()
+        if story != nil {
+            storyTitle.text = story.storyTitle
+            storyAddedByUser.text = story.addedByUser
+            if story.storyImageURL != nil {
+                storyImageView.loadImageUsingCacheWithUrlString(urlString: story.storyImageURL)
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        commentTextView.resignFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,15 +46,13 @@ class StoryAddCommentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        //TODO: Save comment for story
     }
-    */
-
+    
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

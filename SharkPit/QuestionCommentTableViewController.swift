@@ -25,9 +25,24 @@ class QuestionCommentTableViewController: UIViewController, UITableViewDataSourc
         fetchComments()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        questionTitle.text = currentQuestion.questionTitle
+        if currentQuestion.questionImageUrl != nil {
+            questionImageView.loadImageUsingCacheWithUrlString(urlString: currentQuestion.questionImageUrl)
+        }
+        self.questionTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "QuestionAddCommentViewController" {
+            let destinationVC = segue.destination as! QuestionAddCommentViewController
+            destinationVC.currentQuestion = currentQuestion
+        }
+    }
+    
     func fetchComments() {
-        FIRDatabase.database().reference().child("questionItems").child(self.questionTitle.text!).child("Comment").observe(.childAdded, with: { (snapshot) in
-            
+        let questionRef = FIRDatabase.database().reference().child("questionItems")
+        questionRef.child(currentQuestion.questionTitle).child("Comment").observe(.childAdded, with: { (snapshot) in
             if (snapshot.value as? [String : AnyObject]) != nil {
                 let comment = Comment(snapshot: snapshot)
                 
@@ -40,20 +55,6 @@ class QuestionCommentTableViewController: UIViewController, UITableViewDataSourc
         }, withCancel: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        questionTitle.text = currentQuestion.questionTitle
-        if currentQuestion.questionImageUrl != nil {
-            questionImageView.loadImageUsingCacheWithUrlString(urlString: currentQuestion.questionImageUrl)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "QuestionAddCommentViewController" {
-            let destinationVC = segue.destination as! QuestionAddCommentViewController
-            destinationVC.currentQuestion = currentQuestion
-        }
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
@@ -62,7 +63,7 @@ class QuestionCommentTableViewController: UIViewController, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCommentCell") as! QuestionCommentCell
 //        let comment = comments[indexPath.row]
         cell.userName.text = "Hey"
-//        cell.commentDescription.text = comment.
+//        cell.commentDescription.text = comment.userComment
         return cell
     }
 }

@@ -19,7 +19,6 @@ class QuestionDetailViewController : UIViewController  {
     @IBOutlet weak var indicatorBackground: UIImageView!
     
     var question: Question!
-    var comments = [Comment]()
     var agrume: Agrume!
     
     override func viewDidLoad() {

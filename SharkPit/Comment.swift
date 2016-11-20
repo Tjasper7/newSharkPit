@@ -7,18 +7,24 @@
 //
 
 import Foundation
-import UIKit
+import Firebase
 
-class Comment {
-    var userName: String
-    var comment: String
+struct Comment {
+    var commentUserName: String!
+    var userComment: String!
     
-    init?(userName: String, comment: String) {
-        self.userName = userName
-        self.comment = comment
+    init(commentUserName: String, userComment: String) {
+        self.commentUserName = commentUserName
+        self.userComment = userComment
+    }
+    
+    init(snapshot: FIRDataSnapshot) {
+        commentUserName = (snapshot.value as! NSDictionary)["commentUserName"] as! String
+        userComment = (snapshot.value as! NSDictionary)["theComment"] as! String
+    }
+    
+    func toMutableDictionaryObject() -> NSMutableDictionary {
         
-        if userName.isEmpty || comment.isEmpty {
-            return nil
-        }
+        return ["commentUserName" : commentUserName, "theComment" : userComment]
     }
 }

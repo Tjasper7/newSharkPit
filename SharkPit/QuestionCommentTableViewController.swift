@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class QuestionCommentTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -19,6 +20,24 @@ class QuestionCommentTableViewController: UIViewController, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        questionTableView.delegate = self
+        questionTableView.dataSource = self
+        fetchComments()
+    }
+    
+    func fetchComments() {
+        FIRDatabase.database().reference().child("questionItems").child(self.questionTitle.text!).child("Comment").observe(.childAdded, with: { (snapshot) in
+            
+            if (snapshot.value as? [String : AnyObject]) != nil {
+                let comment = Comment(snapshot: snapshot)
+                
+                //if you use this setter, your app will crash if your class properties don't exactly match up with the firebase dictionary key
+                self.comments.append(comment)
+                print("Fetching comments")
+            }
+            self.questionTableView.reloadData()
+            
+        }, withCancel: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,14 +55,14 @@ class QuestionCommentTableViewController: UIViewController, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return comments.count
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCommentCell") as! QuestionCommentCell
-        let comment = comments[indexPath.row]
-        cell.userName.text = comment.userName
-        cell.commentDescription.text = comment.comment
+//        let comment = comments[indexPath.row]
+        cell.userName.text = "Hey"
+//        cell.commentDescription.text = comment.
         return cell
     }
 }

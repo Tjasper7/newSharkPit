@@ -37,14 +37,7 @@ struct Question {
     }
     
     func toMutableDictionaryObject() -> NSMutableDictionary {
+        
         return ["questionTitle" : questionTitle, "TheQuestion" : theQuestion, "questionImageUrl" : questionImageUrl, "addedByUser" : addedByUser]
-    }
-
-    func addComment(comment: Comment) {
-        let commentUser = [comment.userName :"commentUserName"]
-        let commentText = [comment.comment : "theComment"]
-        let question = toMutableDictionaryObject()
-        question.addEntries(from: commentUser)
-        question.addEntries(from: commentText)
     }
 }

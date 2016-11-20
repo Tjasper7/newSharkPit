@@ -21,7 +21,6 @@ class QuestionAddCommentViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var titleBackground: UIView!
     
     var currentQuestion: Question!
-    var comment: Comment!
     let currentUserEmail = FIRAuth.auth()?.currentUser?.email
     
     override func viewDidLoad() {
@@ -52,9 +51,11 @@ class QuestionAddCommentViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func saveCommentPressed ( _ sender: UIButton) {
-        if commentBox != nil && (String(currentUserEmail!) != nil) {
-            let newComment = Comment(userName: currentUserEmail!, comment: commentBox.text)
-            currentQuestion.addComment(comment: newComment!)
+        if commentBox.text != "" && (String(currentUserEmail!) != nil) {
+            let newComment = Comment(commentUserName: currentUserEmail!, userComment: commentBox.text)
+            
+            let quesitonReferenceChild = questionRef.child(self.questionTitle.text!).child("Comment")
+            quesitonReferenceChild.setValue(newComment.toMutableDictionaryObject())
             self.dismiss(animated: true, completion: nil)
         } else {
             

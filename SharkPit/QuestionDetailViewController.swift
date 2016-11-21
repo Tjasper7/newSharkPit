@@ -17,12 +17,17 @@ class QuestionDetailViewController : UIViewController  {
     @IBOutlet weak var questionDescription: UITextView!
     @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
     @IBOutlet weak var indicatorBackground: UIImageView!
+    @IBOutlet var viewCommentsButton: UIButton!
     
     var question: Question!
     var agrume: Agrume!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewCommentsButton.layer.borderWidth = 2
+        let appColor = UIColor(colorLiteralRed: 29/255, green: 99/255, blue: 156/255, alpha: 1)
+        self.viewCommentsButton.layer.borderColor = appColor.cgColor
+        self.viewCommentsButton.layer.cornerRadius = 10
         
     }
     
@@ -36,6 +41,7 @@ class QuestionDetailViewController : UIViewController  {
             questionImageView.loadImageUsingCacheWithUrlString(urlString: question.questionImageUrl)
             activityIndicator.stopAnimating()
         }
+    
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

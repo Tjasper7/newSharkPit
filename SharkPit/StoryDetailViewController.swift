@@ -28,6 +28,13 @@ class StoryDetailViewController: UIViewController, UIGestureRecognizerDelegate  
         tapStory = UITapGestureRecognizer(target: self, action: #selector(StoryDetailViewController.tapStoryView))
         tapStory.delegate = self
         storyDetailTheStory.addGestureRecognizer(tapStory)
+        
+        let fixedWidth = storyDetailTheStory.frame.size.width
+        storyDetailTheStory.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        let newSize = storyDetailTheStory.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        var newFrame = storyDetailTheStory.frame
+        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        storyDetailTheStory.frame = newFrame;
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {

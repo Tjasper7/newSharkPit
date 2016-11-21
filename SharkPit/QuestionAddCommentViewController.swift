@@ -53,12 +53,10 @@ class QuestionAddCommentViewController: UIViewController, UITextViewDelegate {
     @IBAction func saveCommentPressed ( _ sender: UIButton) {
         if commentBox.text != "" && (String(currentUserEmail!) != nil) {
             let newComment = Comment(commentUserName: currentUserEmail!, userComment: commentBox.text)
-            
-            let quesitonReferenceChild = questionRef.child(self.questionTitle.text!).child("Comment")
-            quesitonReferenceChild.setValue(newComment.toMutableDictionaryObject())
+            let quesitonReferenceChild = questionRef.child(self.questionTitle.text!).child("Comment").childByAutoId
+            quesitonReferenceChild().setValue(newComment.toMutableDictionaryObject())
             self.dismiss(animated: true, completion: nil)
         } else {
-            
             alertMessage(title: "Alert", message: "Comment box can not be empty")
         }
     }

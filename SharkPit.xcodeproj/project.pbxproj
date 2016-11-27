@@ -27,6 +27,7 @@
 		665C214B1DC825E50065B7E2 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665C214A1DC825E50065B7E2 /* UserLocation.swift */; };
 		665E766A1D23956200F53DA3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665E76681D23956200F53DA3 /* FBSDKCoreKit.framework */; };
 		665E766B1D23956200F53DA3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665E76691D23956200F53DA3 /* FBSDKLoginKit.framework */; };
+		666678E91DEB993800BA1EDC /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666678E81DEB993800BA1EDC /* Tournament.swift */; };
 		66694A811D0379D8003B8228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66694A801D0379D8003B8228 /* AppDelegate.swift */; };
 		66694A861D0379D8003B8228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66694A841D0379D8003B8228 /* Main.storyboard */; };
 		66694A8B1D0379D8003B8228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66694A891D0379D8003B8228 /* LaunchScreen.storyboard */; };
@@ -112,6 +113,7 @@
 		665C214A1DC825E50065B7E2 /* UserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 		665E76681D23956200F53DA3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		665E76691D23956200F53DA3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		666678E81DEB993800BA1EDC /* Tournament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		66694A7D1D0379D8003B8228 /* SharkPit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharkPit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66694A801D0379D8003B8228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66694A851D0379D8003B8228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				668D0D3D1D7387440095F80B /* Question.swift */,
+				666678E81DEB993800BA1EDC /* Tournament.swift */,
 				664CFA2A1D724B7C0093AE60 /* Story.swift */,
 				66BD2FF51D069519008D5581 /* Profile.swift */,
 				6657B8421DA767E40000B3BE /* Comment.swift */,
@@ -727,6 +730,7 @@
 				664CFA2F1D7255860093AE60 /* LoginViewController.swift in Sources */,
 				6657B8431DA767E40000B3BE /* Comment.swift in Sources */,
 				664CFA2D1D7250F00093AE60 /* User.swift in Sources */,
+				666678E91DEB993800BA1EDC /* Tournament.swift in Sources */,
 				667F44901DE1401000EC86F7 /* StoryCommentTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

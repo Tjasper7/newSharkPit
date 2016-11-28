@@ -21,7 +21,7 @@ class StoriesMasterViewController: UIViewController, UIImagePickerControllerDele
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.storyCollectionView.dataSource = self
         self.storyCollectionView.delegate = self
-        setNavigationTitleToTheLeftWith(title: "Stories")
+        setNavigationTitleToTheLeftWith(title: "Stories / Tournaments")
         
         fetchStories()
     }
@@ -63,6 +63,7 @@ class StoriesMasterViewController: UIViewController, UIImagePickerControllerDele
         if FIRAuth.auth()?.currentUser?.uid == nil {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         } else {
+            // handle logic function
         }
     }
     
@@ -93,6 +94,30 @@ class StoriesMasterViewController: UIViewController, UIImagePickerControllerDele
                 destinationViewController.story = story
             }
         }
+    }
+    
+    
+    @IBAction func pressedPlusButton(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Action Sheet", message: "What would you like to do?", preferredStyle: .actionSheet)
+        
+        let sendButton = UIAlertAction(title: "Send now", style: .default, handler: { (action) -> Void in
+            
+        })
+        
+        let  deleteButton = UIAlertAction(title: "Delete forever", style: .destructive, handler: { (action) -> Void in
+            self.performSegue(withIdentifier: "", sender: <#T##Any?#>)
+        })
+        
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
+            print("Cancel button tapped")
+        })
+        
+        
+        alertController.addAction(sendButton)
+        alertController.addAction(deleteButton)
+        alertController.addAction(cancelButton)
+        
+        self.navigationController!.present(alertController, animated: true, completion: nil)
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

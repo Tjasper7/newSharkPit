@@ -28,6 +28,7 @@
 		665E766A1D23956200F53DA3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665E76681D23956200F53DA3 /* FBSDKCoreKit.framework */; };
 		665E766B1D23956200F53DA3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665E76691D23956200F53DA3 /* FBSDKLoginKit.framework */; };
 		666678E91DEB993800BA1EDC /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666678E81DEB993800BA1EDC /* Tournament.swift */; };
+		666678EC1DEBA38C00BA1EDC /* TournamentAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666678EB1DEBA38C00BA1EDC /* TournamentAddViewController.swift */; };
 		66694A811D0379D8003B8228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66694A801D0379D8003B8228 /* AppDelegate.swift */; };
 		66694A861D0379D8003B8228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66694A841D0379D8003B8228 /* Main.storyboard */; };
 		66694A8B1D0379D8003B8228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66694A891D0379D8003B8228 /* LaunchScreen.storyboard */; };
@@ -114,6 +115,7 @@
 		665E76681D23956200F53DA3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		665E76691D23956200F53DA3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		666678E81DEB993800BA1EDC /* Tournament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		666678EB1DEBA38C00BA1EDC /* TournamentAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentAddViewController.swift; sourceTree = "<group>"; };
 		66694A7D1D0379D8003B8228 /* SharkPit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharkPit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66694A801D0379D8003B8228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66694A851D0379D8003B8228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -231,6 +233,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		666678EA1DEBA36C00BA1EDC /* Tournaments */ = {
+			isa = PBXGroup;
+			children = (
+				666678EB1DEBA38C00BA1EDC /* TournamentAddViewController.swift */,
+			);
+			name = Tournaments;
+			sourceTree = "<group>";
+		};
 		66694A741D0379D8003B8228 = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +343,7 @@
 				664CFA2E1D7255860093AE60 /* LoginViewController.swift */,
 				66BD2FD11D0650E9008D5581 /* Questions */,
 				66BD2FD21D06510A008D5581 /* Stories */,
+				666678EA1DEBA36C00BA1EDC /* Tournaments */,
 				66BD2FD31D065114008D5581 /* PoolHalls */,
 				66BD2FD41D06511C008D5581 /* Profile */,
 			);
@@ -698,6 +709,7 @@
 				66DDFB971D0F8A4100653AC2 /* QuestionMasterViewController.swift in Sources */,
 				66BD2FF61D069519008D5581 /* Profile.swift in Sources */,
 				667F88C81D6D1D1B00F55A3C /* UIImage+Extension.swift in Sources */,
+				666678EC1DEBA38C00BA1EDC /* TournamentAddViewController.swift in Sources */,
 				664CFA2B1D724B7C0093AE60 /* Story.swift in Sources */,
 				665C214B1DC825E50065B7E2 /* UserLocation.swift in Sources */,
 				66BD2FEA1D067632008D5581 /* StoryDetailViewController.swift in Sources */,

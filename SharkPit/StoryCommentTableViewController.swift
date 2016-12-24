@@ -37,6 +37,7 @@ class StoryCommnetTableViewController: UIViewController, UITableViewDelegate, UI
             let story = self.story
             let destinationViewController = segue.destination as! StoryAddCommentViewController
             destinationViewController.story = story
+            print("performs segue")
         }
     }
     

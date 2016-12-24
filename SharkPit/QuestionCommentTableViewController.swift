@@ -64,6 +64,7 @@ class QuestionCommentTableViewController: UIViewController, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCommentCell") as! QuestionCommentCell
         let comment = comments[indexPath.row]
+        print("commentSS \(comments)")
         cell.userName.text = comment.commentUserName
         cell.commentDescription.text = comment.userComment
         return cell

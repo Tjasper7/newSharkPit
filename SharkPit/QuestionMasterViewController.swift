@@ -56,6 +56,7 @@ class QuestionMasterViewController: UIViewController, UICollectionViewDelegate, 
                 let question = questions[selectedQuestion.row]
                 let destinationVC = segue.destination as! QuestionDetailViewController
                 destinationVC.question = question
+                print("perform question segue")
             }
         }
     }

@@ -41,6 +41,9 @@
 		6692F0461D6E8CE800B12A15 /* PoolHallContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692F0451D6E8CE800B12A15 /* PoolHallContainerViewController.swift */; };
 		66958C7B1DDFE09700ED46DB /* PoolBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66958C7A1DDFE09700ED46DB /* PoolBallView.swift */; };
 		66958C7D1DDFE61C00ED46DB /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66958C7C1DDFE61C00ED46DB /* LineView.swift */; };
+		669954691E0E3E3E004AC128 /* TournamentMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669954681E0E3E3E004AC128 /* TournamentMasterViewController.swift */; };
+		6699546B1E0E3EC7004AC128 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6699546A1E0E3EC7004AC128 /* Tournament.swift */; };
+		6699546D1E0E4725004AC128 /* TournamentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6699546C1E0E4725004AC128 /* TournamentCell.swift */; };
 		669CDD771D9F3C2E008D7DD1 /* QuestionCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CDD761D9F3C2E008D7DD1 /* QuestionCommentCell.swift */; };
 		669CDD791D9F440B008D7DD1 /* QuestionAddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CDD781D9F440B008D7DD1 /* QuestionAddCommentViewController.swift */; };
 		669CDD7D1DA18907008D7DD1 /* StoryCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CDD7C1DA18907008D7DD1 /* StoryCommentCell.swift */; };
@@ -132,6 +135,9 @@
 		6692F0451D6E8CE800B12A15 /* PoolHallContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoolHallContainerViewController.swift; sourceTree = "<group>"; };
 		66958C7A1DDFE09700ED46DB /* PoolBallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoolBallView.swift; sourceTree = "<group>"; };
 		66958C7C1DDFE61C00ED46DB /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		669954681E0E3E3E004AC128 /* TournamentMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentMasterViewController.swift; sourceTree = "<group>"; };
+		6699546A1E0E3EC7004AC128 /* Tournament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		6699546C1E0E4725004AC128 /* TournamentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentCell.swift; sourceTree = "<group>"; };
 		669CDD761D9F3C2E008D7DD1 /* QuestionCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCommentCell.swift; sourceTree = "<group>"; };
 		669CDD781D9F440B008D7DD1 /* QuestionAddCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAddCommentViewController.swift; sourceTree = "<group>"; };
 		669CDD7C1DA18907008D7DD1 /* StoryCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryCommentCell.swift; sourceTree = "<group>"; };
@@ -300,15 +306,22 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		669954671E0E3DA6004AC128 /* Tournament */ = {
+			isa = PBXGroup;
+			children = (
+				669954681E0E3E3E004AC128 /* TournamentMasterViewController.swift */,
+			);
+			name = Tournament;
+			sourceTree = "<group>";
+		};
 		66BD2FCE1D0650D4008D5581 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				668D0D3D1D7387440095F80B /* Question.swift */,
 				664CFA2A1D724B7C0093AE60 /* Story.swift */,
+				6699546A1E0E3EC7004AC128 /* Tournament.swift */,
 				66BD2FF51D069519008D5581 /* Profile.swift */,
 				6657B8421DA767E40000B3BE /* Comment.swift */,
-				66958C7A1DDFE09700ED46DB /* PoolBallView.swift */,
-				66958C7C1DDFE61C00ED46DB /* LineView.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -320,6 +333,9 @@
 				669CDD761D9F3C2E008D7DD1 /* QuestionCommentCell.swift */,
 				669CDD7C1DA18907008D7DD1 /* StoryCommentCell.swift */,
 				66BD2FE11D065F41008D5581 /* StoryCell.swift */,
+				6699546C1E0E4725004AC128 /* TournamentCell.swift */,
+				66958C7A1DDFE09700ED46DB /* PoolBallView.swift */,
+				66958C7C1DDFE61C00ED46DB /* LineView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -330,6 +346,7 @@
 				664CFA2E1D7255860093AE60 /* LoginViewController.swift */,
 				66BD2FD11D0650E9008D5581 /* Questions */,
 				66BD2FD21D06510A008D5581 /* Stories */,
+				669954671E0E3DA6004AC128 /* Tournament */,
 				66BD2FD31D065114008D5581 /* PoolHalls */,
 				66BD2FD41D06511C008D5581 /* Profile */,
 			);
@@ -691,6 +708,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6699546B1E0E3EC7004AC128 /* Tournament.swift in Sources */,
 				6605E5711DC71079001636F8 /* YelpClient.swift in Sources */,
 				66DDFB971D0F8A4100653AC2 /* QuestionMasterViewController.swift in Sources */,
 				66BD2FF61D069519008D5581 /* Profile.swift in Sources */,
@@ -716,6 +734,7 @@
 				669CDD791D9F440B008D7DD1 /* QuestionAddCommentViewController.swift in Sources */,
 				66958C7B1DDFE09700ED46DB /* PoolBallView.swift in Sources */,
 				66694A811D0379D8003B8228 /* AppDelegate.swift in Sources */,
+				669954691E0E3E3E004AC128 /* TournamentMasterViewController.swift in Sources */,
 				6605E5731DC71087001636F8 /* Business.swift in Sources */,
 				6692F0461D6E8CE800B12A15 /* PoolHallContainerViewController.swift in Sources */,
 				669CDD7D1DA18907008D7DD1 /* StoryCommentCell.swift in Sources */,
@@ -725,6 +744,7 @@
 				664C70471D0C8EFC0003C5DE /* TableLayoutViewController.swift in Sources */,
 				664C704D1D0C99630003C5DE /* QuestionDetailViewController.swift in Sources */,
 				664CFA2F1D7255860093AE60 /* LoginViewController.swift in Sources */,
+				6699546D1E0E4725004AC128 /* TournamentCell.swift in Sources */,
 				6657B8431DA767E40000B3BE /* Comment.swift in Sources */,
 				664CFA2D1D7250F00093AE60 /* User.swift in Sources */,
 				667F44901DE1401000EC86F7 /* StoryCommentTableViewController.swift in Sources */,

@@ -104,7 +104,7 @@ class StoriesMasterViewController: UIViewController, UIImagePickerControllerDele
         let story = stories[indexPath.row]
         cell.usernameLabel.text = story.addedByUser
         cell.storyLabel.text = story.storyTitle
-        
+        print("stories : \(stories))")
         if story.storyImageURL != nil {
             FIRStorage.storage().reference(forURL: story.storyImageURL).data(withMaxSize: 10 * 1024 * 1024, completion: { (data, error) in
                 

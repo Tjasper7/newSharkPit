@@ -22,7 +22,6 @@ class StoryCreateViewController: UIViewController, UIImagePickerControllerDelega
     let descriptionDefaultText = "Enter story here. 160 characters required"
     let defaultTitle = "Insert Title"
     
-    var stories = [Story]()
     var story: Story!
     
     let currentUserEmail = FIRAuth.auth()?.currentUser?.email
@@ -31,10 +30,12 @@ class StoryCreateViewController: UIViewController, UIImagePickerControllerDelega
     //MARK: View
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.descriptionTextView.delegate = self
-        self.descriptionTextView.layer.cornerRadius = 6
+        
         self.titleTextField.delegate = self
         self.titleTextField.layer.cornerRadius = 6
+        
+        self.descriptionTextView.delegate = self
+        self.descriptionTextView.layer.cornerRadius = 6
         
         self.storyImage.layer.cornerRadius = 6
         

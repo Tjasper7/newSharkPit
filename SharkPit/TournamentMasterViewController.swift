@@ -29,7 +29,7 @@ class TournamentMasterViewController: UIViewController, UIImagePickerControllerD
                 
                 // set tournament destination vc
 //                let destinationViewController = segue.destination as! StoryDetailViewController
-//                destinationViewController.story = story
+//                destinationViewController.story = storyh
             }
         }
     }
